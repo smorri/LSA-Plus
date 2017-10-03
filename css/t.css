@@ -1,0 +1,24 @@
+﻿li.thread_ignore { pointer-events: none; color: gray; opacity: 0.5; } li.thread_ignore .threadtitle a { color: gray !important; }
+
+#threads {
+    display: none;
+}
+
+#threadlist:after {
+    content: "\1f48b  Loading \1f48b";
+    position: relative;
+    display: block;
+    font-size: 3em;
+    text-align: center;
+    color: rgb(234, 79, 53);
+	padding-bottom: 6px;
+}
+
+#threadlist.loaded:after {
+    content: "";
+    display: none;
+}
+
+#threadlist.loaded #threads {
+    display: initial;
+}

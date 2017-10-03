@@ -1,0 +1,52 @@
+﻿.quote_container.ignoreQuote > .message, .quote_container.ignoreQuote > .bbcode_postedby { color: #ff0000; }
+.quote_container.ignoreQuote > .message a{ font-weight: bold; }
+.quote_container.ignoreQuote > .bbcode_postedby a { display: none; }
+
+div#content > #postlist {
+    overflow: hidden;
+	height: 280px;
+}
+
+
+div#content > #thread_controls,
+div#content > #postlist,
+div#content > #above_postlist,
+div#content > #qr_defaultcontainer,
+div#content > #thread_info,
+div#content #newreplylink_bottom,
+div#content #pagination_bottom {
+    visibility: hidden;
+}
+
+div#content > #below_postlist:before {
+    content: "\1f48b  Loading \1f48b";
+    position: relative;
+    text-align: center;
+    display: block;
+    color: rgb(234, 79, 53);    
+    font-size: 4em; 
+}
+
+div#content.loaded > #thread_controls,
+div#content.loaded > #postlist,
+div#content.loaded > #above_postlist,
+div#content.loaded > #qr_defaultcontainer,
+div#content.loaded > #thread_info,
+div#content.loaded #newreplylink_bottom,
+div#content.loaded #pagination_bottom {
+    visibility: visible;
+}
+
+div#content.loaded > #postlist {
+    overflow: initial;
+	height: initial;
+}
+
+div#content.loaded > #below_postlist:before {
+    content: "";
+}
+
+div#content.loaded #newreplylink_bottom,
+div#content.loaded #pagination_bottom  {
+    visibility: visible !important;
+}

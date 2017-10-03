@@ -1,0 +1,240 @@
+﻿/*------------------------------------------ 
+ * Menu Wrapper
+ *------------------------------------------
+ */
+#m_pane { position: fixed !important; top: -8px; bottom: 0; left: 0; z-index: 20; }
+#m_nbutton, #m_lbutton, #m_mbutton, #menu li span:before, #m_controls a:before {
+    font-family: FontAwesome; 
+}
+#menu span, #m_header h2, #m_avatar + h1 {
+    font-family: 'Quicksand', sans-serif !important;
+    font-weight: bolder !important;	
+}
+/*------------------------------------------ 
+ * Menu Buttons
+ *------------------------------------------
+ */
+#m_nbutton, #m_mbutton, #m_lbutton {
+	position: relative;
+    color: #333;
+    background-color: #e7e7e7;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 4px 10px;
+    margin: 5px 0;
+    box-shadow: 1px 0px 6px 1px rgba(0,0,0,0.5);
+}
+#m_nbutton, #m_mbutton, #m_lbutton, #menu li span:before{ font-size: 1.55em; }
+#m_mbutton:before, #m_lbutton:before { margin-left: 3px; }
+#m_mbutton:hover { cursor: pointer; }
+#m_lbutton[class="active"]:before   { content: '\f023'; }
+#m_mbutton[class="inactive"]:before { content: '\f0c9'; }
+#m_mbutton[class="active"]:before  { content: '\f00d';  }
+#m_nbutton[class="inactive"]:before { content: '\f1f6'; }
+#m_nbutton[class="active"]:before {
+    content: '\f0f3';
+	display: block;
+	-webkit-animation: shake 3s ease-in-out infinite;
+    animation: shake 3s ease-in-out infinite;	
+}
+#m_nbutton[class="active"] {
+    background-color: #ea4f35;
+    color: #fff;
+	text-shadow: 1px 1px 0 #bf2c14, -1px -1px 0  #bf2c14, 
+			     1px -1px 0 #bf2c14, -1px 1px 0  #bf2c14, 
+			     0px 3px 9px #333;
+}
+#m_mbutton[class="active"], #m_mbutton[class="active"] + #m_nbutton ,
+#m_lbutton[class="active"], #m_lbutton[class="active"] + #m_nbutton {
+    margin-left: 250px;
+	transition: margin-left .3s ease-in;
+}
+
+@-webkit-keyframes shake {
+    0%{ -webkit-transform: rotate(0); }
+    8% { -webkit-transform: rotate(20deg); }
+    20% { -webkit-transform: rotate(-20deg); }
+    30% { -webkit-transform: rotate(0); }
+    40% { -webkit-transform: rotate(0); }
+    100%  { -webkit-transform: rotate(0); }
+}
+
+@keyframes shake {
+    0%  { transform: rotate(0); }
+    8% { transform: rotate(20deg); }
+    20% { transform: rotate(-20deg); }
+    30% { transform: rotate(0); }
+    40% { transform: rotate(0); }
+    100%  { transform: rotate(0); }
+}
+/*------------------------------------------ 
+ * Menu
+ *------------------------------------------
+ */
+#menu {
+  background-color: #F7F7F7;
+  float: left;
+  width: 250px;
+  transition: margin-left .3s ease-in;
+}
+#menu[class="show"], #m_mbutton[class="inactive"], #m_mbutton[class="inactive"] + #m_nbutton {
+    margin-left: 0;
+	transition: margin-left .3s ease-in;
+}
+/*#menu[class="show"] { box-shadow: 21px 60px 58px 0px rgba(0,0,0,0.3) !important; }*/
+#menu[class="show"] { box-shadow: 1px 2px 88px 20px rgba(0,0,0,0.3) !important; }
+#menu[class="hide"] { box-shadow: none; }
+#menu > ul {   margin-top: 7px;  }
+#menu[class="hide"] { margin-left: -250px; }
+/*------------------------------------------ 
+ * Menu List Elements
+ *------------------------------------------
+ */
+#menu li:not(.inline){
+    position: relative;
+    display: block;
+    width: 250px;
+    border-top: 1px solid #ddd;
+    height: 38px;
+    padding-top: 10px;
+}
+#menu .dim {
+    background-color:#ededed;
+    border-top: 1px solid #fff !important;
+}
+#menu li:first-child, #menu li:nth-child(2), #menu li:nth-child(3) {
+    border-top: 0 !important;
+}
+#menu li.lastItem { border-bottom: 3px solid #A53825; }
+#menu span {
+    position: relative;
+    display: table-cell;
+    width: 190px;
+    font-size: 13.5px;
+}
+#menu li > a { display: table; color: #8a8a8a; width: 100%; } 
+#menu li span:before { margin: 25px; font-weight: initial; }
+li#m_profile a:before { content: "\f007"; }
+li#m_settings a:before { content: "\f013"; }
+li#m_subscribed a:before { content: "\f004"; }
+li#m_reputation span:before { content: "\f005"; }
+li#m_privatemsg span:before { content: "\f0e0"; }
+li#m_visitormsg span:before { content: "\f249"; }
+li#m_mentions span:before { content: "\f1fa"; }
+li#m_threadtags span:before { content: "\f02c"; margin-right: 20px; }
+li#m_thankgroan span:before { content: "\f164"; }
+li#m_postquotes span:before { content: "\f10d"; }
+li#m_friendreqs span:before { content: "\f234"; margin-right: 21px; } 
+li#m_groupinvite span:before  { content: "\f0c0"; margin-right: 21px; }
+li#m_grouprequest span:before  { content: "\f0c0 +"; margin-right: 9px; }
+li#m_hashtags span:before { content: "#"; margin-right: 32px; }
+#menu li[class~="disabled"] span,
+#menu li[class~="disabled"] span:before {
+    cursor: default; 
+    color: #c9c9c9; 
+}
+#menu li:not(.disabled):hover span:before, 
+#menu li:not(.disabled):hover span {
+    color: #d63216;
+}
+#menu em {
+    /*margin-right: 7px;
+    margin-left: 20px;*/
+	right: 10px;
+	float: right !important;
+	position: relative;
+	top: 4px;
+    background-color: #ea4f35;
+    color: #f5f5f5;
+    padding: 2px 9px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+li#m_privatemsg[class~="no_messages"] em {
+    background-color: #c9c9c9;
+    color: #ededed;
+}
+li#m_privatemsg[class~="no_messages"]:hover span:before,
+li#m_privatemsg[class~="no_messages"]:hover span {
+     color: #8a8a8a; 
+}
+/*------------------------------------------ 
+ * Menu Header
+ *------------------------------------------
+ */
+#_header {
+    background-color: #ea4f35 !important;
+    height: 90px !important;
+    border-bottom: 3px solid #A53825;
+}
+#m_header h2 {
+   margin: 0 20px;
+   padding: 5px 0;
+   text-align: center;
+   font-size: 1.3em;
+   top: 4px;
+   color: #d63216;
+   border-bottom: 1px dashed #d63216;
+   border-top: 1px dashed #d63216;     
+}
+#m_header[class~="dim"] {
+   border-top: 2px solid #aaa !important;
+}
+#m_avatar {
+    margin-left: 10px;
+    padding: 9px;
+    float: left;
+}
+#m_avatar img {
+    border-radius: 100%;
+	height: 60px;
+	width: 60px;
+}
+#m_avatar + h1{
+    width: 162px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1.65em !important;
+    text-align: center;
+    top: 6px;
+	float: right;
+    color: whitesmoke;
+}
+
+#m_avatar .editBadge {
+    width: 60px !important;
+    text-align: center;
+    margin-top: 23px;
+    position: absolute;
+    background-color: #5cb85c;
+    border-radius: 4px;
+    opacity: 0;
+    font-size: 1em;
+    color: #F5F5F5 !important;
+    cursor: pointer;
+}
+
+#m_avatar:hover .editBadge {
+    opacity: 1;
+}
+
+#m_controls {
+    top: 10px;
+    width: 162px;
+    float: right;
+    text-align: center;	
+}
+#m_controls a:before {
+    font-size: 1.7em;
+    color: #f5f5f5;
+}
+#m_controls ul {
+    margin-top: 15px;
+    display: inline-block;
+    text-align: center;
+}
+#m_controls ul > li {
+    float: left;
+    padding-left: 10px;
+}
+#m_controls ul > li:first-child { padding-left: 0px; }

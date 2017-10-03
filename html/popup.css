@@ -1,0 +1,83 @@
+﻿html {
+	width: 300px;
+	background-color: #fcfcfc;
+}
+
+body{
+	font-family: 'Raleway', sans serif;
+	color: #333;
+}
+
+em { text-align: center; display: block; }
+i {
+	margin-right: 4px;
+	font-size: 1.2em;
+}
+
+table {
+	font-size: 1.1em;
+	width: 100%;
+}
+
+table td:nth-child(2){
+	width: 40%;
+	text-align: right;
+}
+
+.header {
+	text-transform: uppercase;
+	padding-bottom: 10px;
+}
+
+#prefs, .header {
+	text-align: center;
+	display: block;
+	font-size: 1.2em;
+	margin-top: 15px;
+	font-weight: light;
+}
+
+#prefs {
+	color: #EA4F35;
+	padding-top: 16px;
+	cursor: pointer;
+	border-top: 1px solid #aaa;
+}
+
+#status {
+	width: 100%;
+	background-color: #777;
+    height: 10px;
+    border-radius: 10px;
+}
+
+#status div {
+    position: relative;
+    height: inherit;
+    border-radius: inherit;
+}
+
+#statusText {
+	font-variant: small-caps;
+	display: block;
+	text-align: center;
+	font-size: 1.3em;
+	font-weight: bold;
+}
+
+.status-good div { background-color: #5cb85c; }
+
+.status-good + #statusText { color: #5cb85c; }
+.status-danger div { background-color: #f96868; }
+
+#status > div.val_0 { width: 5%; }
+#status div.val_10 { width: 10%; }
+#status div.val_20 { width: 20%; }
+#status div.val_30 { width: 30%; }
+#status div.val_40 { width: 40%; }
+#status div.val_50 { width: 50%; }
+#status div.val_60 { width: 60%; }
+#status div.val_70 { width: 70%; }
+#status div.val_80 { width: 80%; }
+#status div.val_90 { width: 90%; }
+#status div.val_100 { width: 100%; }

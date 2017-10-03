@@ -1,0 +1,70 @@
+{
+"name": "LSA Plus",
+"description": "An (unofficial) browser add-on that provides additional functionality to registered members of LipstickAlley.",
+"version":"2.2.2",
+"manifest_version": 2,
+"permissions": ["storage", "alarms", "unlimitedStorage"],
+"background": {
+	"scripts": ["lib/jquery-1.11.3.min.js", "lib/d.js", "lib/a.js", "background.js"],
+	"persistent": false
+	},
+"options_ui": {
+	"page": "html/options.html",
+	"chrome_style": false
+	},	
+"options_page": "html/options.html",
+"browser_action": {
+    "default_icon": "img/kiss-16.png",
+    "default_popup": "html/popup.html"
+},
+"icons": { "16": "img/kiss-16.png",
+		   "32": "img/kiss-32.png",
+           "128": "img/kiss-128.png"
+},
+"content_security_policy": "script-src 'self'; object-src 'self'; style-src 'self' https://fonts.googleapis.com https://maxcdn.bootstrapcdn.com",
+"content_scripts": [
+    {
+      "matches": ["http://www.lipstickalley.com/*", "https://www.lipstickalley.com/*"],
+      "js": ["lib/jquery-1.11.3.min.js", "lib/c.js"],
+	  "run_at": "document_start" 
+	},
+	{
+      "matches": ["http://www.lipstickalley.com/*", "https://www.lipstickalley.com/*"],
+      "js": ["js/g.js", "js/m.js"],
+	  "css": ["css/g.css", "css/m.css"],
+	  "run_at": "document_end" 
+	},
+    {
+      "matches": ["http://www.lipstickalley.com/showthread.php/*", "https://www.lipstickalley.com/showthread.php/*",
+	  "http://www.lipstickalley.com/forumdisplay.php/*", "https://www.lipstickalley.com/forumdisplay.php/*",
+	  "http://www.lipstickalley.com/forum.php", "https://www.lipstickalley.com/forum.php"],
+      "js": ["js/f.js"],
+	  "css": ["css/f.css"]
+    },
+    {
+      "matches": ["http://www.lipstickalley.com/forumdisplay.php/*", "https://www.lipstickalley.com/forumdisplay.php/*"],
+      "js": ["js/t.js"],
+	  "css": ["css/t.css"]
+    },	
+    {
+      "matches": ["http://www.lipstickalley.com/showthread.php/*", "https://www.lipstickalley.com/showthread.php/*"],
+      "js": ["js/q.js"],
+	  "css": ["css/q.css"],
+	  "run_at": "document_end"   
+    },	
+    {
+      "matches": ["http://www.lipstickalley.com/profile.php?do=ignorelist*", "https://www.lipstickalley.com/profile.php?do=ignorelist*"],
+      "js": ["js/i1.js"],
+	  "css": ["css/i.css"]
+    },
+	{
+	  "matches": ["http://www.lipstickalley.com/profile.php?do=*&userlist=ignore&u=*", "https://www.lipstickalley.com/profile.php?do=*&userlist=ignore&u=*"],
+      "js": ["js/i2.js"]
+	},
+	{
+	  "matches": ["http://www.lipstickalley.com/profile.php?do=editavatar", "https://www.lipstickalley.com/profile.php?do=editavatar"],
+      "js": ["js/ea.js"],
+	  "run_at": "document_end" 
+	}	
+  ]
+}

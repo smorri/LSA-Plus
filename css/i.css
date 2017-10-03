@@ -1,0 +1,95 @@
+﻿.formcontrols .section { padding: 0 !important; } 
+#UserListTable tr{ border-bottom: 1px solid #e3e3e3; } 
+#UserListTable td { padding:4px 0; }
+#UserListTable:not(.s_79) li > a:hover { color: #fff !important; }
+
+#UserListTable {
+    width: 100%;
+    font-family: Quicksand;
+    font-weight: bold;
+}
+
+#UserListTable td, #UserListTable th{
+    font-size: 1.15em;
+    overflow: hidden;
+    word-break:break-word;
+}
+
+#UserListTable td > div { padding: 15px 0; }
+#UserListTable td.voidReason { font-style: italic; }
+#UserListTable td:last-child { padding: 0 2%; }
+
+#UserListTable thead th {
+    padding: 13px 3px;
+	border-bottom: 2px solid #6f6f6f; 
+    border-top: 2px solid #6f6f6f; 
+}
+
+#UserListTable.s_84 thead th, #UserListTable.s_96 thead th { background-color: #111; }
+#UserListTable.s_93 thead th { background-color: #004568; } 
+#UserListTable.s_94 thead th { background-color: #670000; } 
+#UserListTable.s_95 thead th { background-color: #1c480b; }
+#UserListTable:not(.s_79) tr:nth-child(even) { background-color: #222; }
+#UserListTable:not(.s_79) tr:nth-child(odd) { background-color: #191919;}
+#UserListTable.s_79 thead th { background-color: #e3e3e3; color: #555;  }
+#UserListTable th:first-child  { width: 8%; }
+#UserListTable th:nth-child(2) { width: 20%; }
+#UserListTable th:last-child   { width: 11%;   font-family: FontAwesome;   }
+#UserListTable th:last-child:before { content: '\f040'; }
+#UserListTable #tableCheck[class="unchecked"]:before{ content: '\f096'; }
+#UserListTable #tableCheck[class="checked"]:before  { content: '\f046'; }
+
+#UserListTable th:first-child,
+#UserListTable th:last-child {
+    font-size: 2em;
+    text-align: center;
+    font-weight: initial;
+}
+
+#UserListTable input[type=checkbox] { display: none; }
+
+#UserListTable input[type=checkbox] + label:before {
+  font-family: FontAwesome;
+  content: '\f096';
+  font-size: 2em;
+  margin-right: 2px;
+  font-weight: initial;
+  cursor: pointer;
+}
+
+#UserListTable input[type=checkbox]:checked + label:before { content: '\f046';  margin-right: -2px; color: #38ad57;   }
+
+#UserListTable td:first-child { text-align: center; }
+table#UserListTable tr:last-child { border-bottom: 0; }
+
+ul#ignorelist, .floatcontainer .check_all_ctrl.shade { display: none; }
+
+.t_button {
+     padding: 7px 7px 9px;
+     text-align: center;
+     font-family: 'PT Sans';
+     color: #f5f5f5;
+     left: 4%;
+     width: 38px;
+     height: 18px;
+     margin: 8% 19%;
+     border-radius: 10px;
+     font-weight: bold;
+     font-size: 1.2em;    
+}
+
+#UserListTable .t-button {
+    text-align: center;
+	padding: 7px 10px;
+	border: none;
+	border-radius: 10px;
+	color: #fff;
+	font-weight: bold;
+	font-family: Quicksand;
+	font-size: 1em;
+	margin-top: 5px;
+	cursor: pointer;
+}
+#UserListTable .t-button.button-small{ max-width: 30px; max-height: 18px; }
+#UserListTable .button-success{ background-color: #5cb85c; }
+#UserListTable .button-danger{ background-color: #f96868; }

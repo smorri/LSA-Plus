@@ -1,0 +1,271 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="../html/options.css" type="text/css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" type="text/css">
+	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Raleway' type='text/css'>
+</head>
+<body>
+	<div id="modal-w" class="modal-hide">
+		<div id="export-d" class="modal modal-target-hide modal-large">
+			<div class="modal-h">
+				<h3 class="modal-t">Export</h3>
+				<button id="export-d-x" class="modal-x">×</button>
+			</div>
+			<div class="modal-b">
+				<table><tbody>
+					<tr>
+						<td class="modal-cl">You can export notes saved in the database.<br><br>Click <em>Export</em> and contents of the database will appear in the field below. You can copy and paste the comma-seperated text into Notepad and save it to your machine.
+						<br>
+						<br>
+						<br>
+						<p>Progress :</p>
+						<div class="progress progress-success"><div class="val_0"></div></div></td>
+						<td><textarea rows="17" placeholder="Click 'Export' ..."></textarea></td>
+					</tr>
+				</tbody></table>
+			
+			</div>
+			<div class="modal-f">
+				<button id="export-confirm" type="button" class="button button-xlarge button-success">Export</button>
+				<button id="export-clear" type="button" class="button button-xlarge button-warning">Clear</button>				
+				<button type="button" id="export-d-cancel" class="button button-xlarge button-default">Cancel</button>
+			</div>
+		</div>		
+		<div id="import-d" class="modal modal-target-hide modal-large">
+				<div class="modal-h">
+					<h3 class="modal-t">Import</h3>
+					<button id="import-d-x" class="modal-x">×</button>
+				</div>
+				<div class="modal-b">You can import notes from a textfile to the database.<br><br>Copy and paste your comma-seperated text into the textarea below and click <em>Import</em>.
+				<div class="progress progress-info"><div class="val_20"></div></div>
+	<textarea rows="20" placeholder="Copy, Paste, and Click 'Import' ..."></textarea>
+	</div>
+				<div class="modal-f">
+					<button type="button" class="button button-xlarge button-info">Import</button>
+					<button type="button" id="import-d-cancel" class="button button-xlarge button-default">Cancel</button>
+				</div>
+			</div>	
+		<div id="delete-d" class="modal modal-target-hide modal-small">
+		
+			<div class="modal-h">
+				<h3 class="modal-t">Delete Database</h3>
+				<button id="delete-d-x" class="modal-x">×</button>
+			</div>
+			<div class="modal-b">Are you sure you want to permanently delete the database?<br><br>Once deleted, any stored notes cannot be recovered!
+			</div>
+			<div class="modal-f">
+				<button type="button" id="delete-confirm" class="button button-xlarge button-danger">Delete</button>
+				<button type="button" id="delete-d-cancel" class="button button-xlarge button-default">Cancel</button>
+			</div>
+		</div>
+	</div>		
+<nav id="nav">
+		<li>Preferences</li>
+		<li>
+			<span id="status"></span>
+			<a id="save-b" href="#"></a>
+		</li>
+</nav>
+
+<div id="wrapper">
+	<div class="page-h"></div>	
+	<!-- Ignore List Block -->
+	<div class="panel">
+		<div class="panel-h">
+			<h3 class="panel-t">Ignore List Plugin</h3>
+			<div class="switchWrapper">
+                <input id="ignoreSwitch" type="checkbox">
+                <label for="ignoreSwitch"></label>
+			</div>
+		</div>
+		<div class="panel-b">
+			<div class="panel-i">
+			<strong>What does this feature do?</strong>
+			<ul>
+				<li class="success">Include a note for each blocked user.</li>
+				<li class="success">Posts by Ignored User's are hidden in threads.</li>
+				<li class="success">Threads by Ignored User's are disabled <i>(optional)</i></li>
+				<li class="success">Quotes by Ignored User's are hidden in threads <i>(optional)</i></li>
+				
+			</ul>
+		</div>
+			<div class="subpanel">
+				<div class="subpanel-h">Database</div>
+				<div class="subpanel-b">
+					<button id="export-btn" type="button" class="button button-small button-success">Export</button>
+					<!-- <button id="import-btn" type="button" class="button button-small button-info">Import</button> -->
+					<button id="delete-btn" type="button" class="button button-small button-danger">Delete</button>
+				</div>
+			</div>
+		<hr>
+			<table><tbody>	
+				<!-- <tr>
+					<th>Number of Users Stored</th>
+					<td id="size"></td>
+				</tr> -->
+				<tr>
+					<th>
+					Hide <em>Ignored PostBit Block</em> in threads
+					</th>
+					<td>
+					<input class="custom-cb" type="checkbox" disabled>
+					<label></label>
+					</td>
+				</tr>
+				<tr>
+					<th>
+					Hide <em>Quotes</em> by ignored users in threads
+					</th>
+					<td>
+					<input id="ignore-q-v" class="custom-cb" type="checkbox">	
+					<label for="ignore-q-v"></label>
+					</td>
+				</tr>		
+				<tr>
+					<th>
+					Disable <em>Threads</em> by ignored users in Forums and Subforums
+					</th>
+					<td>
+					<input id="ignore-t-v" class="custom-cb" type="checkbox">
+					<label for="ignore-t-v"></label>
+					</td>
+				</tr>	
+				<tr>
+					<th class="li-last"></th>
+					<td><small>ver 2.0</small></td>
+				</tr>					
+			</tbody></table>	
+		</div>
+	</div>
+	<!-- NSFW Block -->
+	<div class="panel">
+		<div class="panel-h">
+			<h3 class="panel-t">Not Safe For Work (NSFW) Filter</h3>
+			<div class="switchWrapper">
+                <input id="nsfwSwitch" type="checkbox">
+                <label for="nsfwSwitch"></label>
+			</div>
+		</div>
+		<div class="panel-b">
+			<div class="panel-i">
+				<strong>What does this feature do?</strong>
+				<ul>
+					<li class="success">Filters posts and threads that appear on the sidebar.</li>
+					<li class="success">Mature content is highlighted and flagged with a <img src="../img/nsfwt.png"></img> tag.</li>
+					<li class="danger">Increasing the number of posts to filter in <em>Latest Posts</em> <u>may</u> result in a slower page load.   <strong>(Recommended: 7)</strong></li>
+				</ul>
+			</div>
+			<table><tbody>
+				<tr>
+					<th>
+					Filter threads in <em>Today's Hottest Threads</em>
+					</th>
+					<td>
+					<input id="nsfw-tht-v" class="custom-cb" type="checkbox">	
+					<label for="nsfw-tht-v"></label>
+					</td>
+				</tr>				
+				<tr>
+					<th>
+					Filter threads in <em>New Topics</em>
+					</th>
+					<td>
+					<input id="nsfw-nt-v" class="custom-cb" type="checkbox">	
+					<label for="nsfw-nt-v"></label>
+					</td>
+				</tr>
+				<tr>
+					<th>
+					Filter threads in <em>Latest Posts</em>
+					</th>
+					<td>
+					<input class="custom-cb" type="checkbox" disabled>
+					<label></label>
+					</td>
+				</tr>				
+				<tr>
+					<th>Number of Posts to Display/Filter in <em>Latest Posts</em> section</th>
+					<td>
+					<select id="nsfw-lp-v">
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+						<option>10</option>
+					</select>
+					</td>
+				</tr>
+				<tr>
+					<th class="li-last"></th>
+					<td><small>ver 1.0</small></td>
+				</tr>					
+			</tbody></table>
+		</div>
+	</div>
+	<!-- User Menu Pane Block -->
+	<div class="panel">
+		<div class="panel-h">
+			<h3 class="panel-t">User Menu</h3>
+			<div class="switchWrapper">
+                <input id="notifSwitch" checked="" type="checkbox">
+                <label for="notifSwitch"></label>
+			</div>
+		</div>
+		<div class="panel-b">
+			<div class="panel-i">
+				<strong>What does this feature do?</strong>
+				<ul>
+					<li class="success">Displays links to <em>Profile</em>, <em>Settings</em>, and <em>Subscribed Threads</em> <i>(optional)</i> in user's Hotbar</li>
+					<li class="success">Reformats forum notifications in the Notification Pane.</li>
+				    <li class="success">Fixed Menu Bar scrolls with page.</li>
+				    <li class="success">Locking the Menu leaves it expanded at all times.</li>					
+				</ul>
+			</div>
+			<table><tbody>
+				<tr>
+					<th><em>Lock</em> menu</th>
+					<td>
+					<input id="mb-lm-v" class="custom-cb" type="checkbox">	
+					<label for="mb-lm-v"></label>
+					</td>
+				</tr>			
+				<tr>
+					<th>Show <em>Profile</em> in hotbar</th>
+					<td>
+					<input class="custom-cb" type="checkbox" disabled>
+					<label></label>
+					</td>
+				</tr>
+				<tr>
+					<th>Show <em>Settings</em> in hotbar</th>
+					<td>
+					<input class="custom-cb" type="checkbox" disabled>
+					<label></label>
+					</td>
+				</tr>				
+				<tr>
+					<th>Show <em>Subscribed Threads</em> in hotbar</th>
+					<td>
+					<input id="mb-st-v" class="custom-cb" type="checkbox">	
+					<label for="mb-st-v"></label>
+					</td>
+				</tr>		
+			</tbody></table>
+		</div>
+	</div>
+	<!-- Attribution Block -->
+	<div class="panel panel-attr">
+		<div class="panel-b">			
+			<img src="/img/kiss-16.png">
+			<div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed under <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div>
+		</div>
+	</div>	
+	</div>
+
+<script type="text/javascript" src="../lib/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="/html/options.js"></script>
+<script type="text/javascript" src="../lib/d.js"></script>
+</body>
+</html>

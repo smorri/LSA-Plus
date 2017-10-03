@@ -1,0 +1,3 @@
+﻿#nonotifications, #notifications, #toplinks  ul.isuser li:nth-child(2), #toplinks  ul.isuser li:nth-child(3), #toplinks  ul.isuser li:nth-child(5), #toplinks  ul.isuser li:last-child, .onlinestatus, .imlinks.info_row , .postbitignored.postbitim{ display: none; }
+.forumhead { background: #d63216 url(http://www.lipstickalley.com/images/buttons/newbtn_middle.png) repeat-x !important; border-top-right-radius: 5px !important; border-top-left-radius: 5px !important; }
+.threadlisthead.table { color: #fff !important; background-color: #F60 !important; border: 1px solid #F60 !important; } .fb_iframe_widget { display: none !important; } .signaturecontainer { max-height: 250px !important; }
